@@ -2,7 +2,7 @@
 CAR RENTAL system for QBUS Servers, Easy Functionality, and Highly Customizable. 
 
 
-### [PREVIEW](https://youtu.be/pki6ms0_Ods)
+### [PREVIEW]([https://youtu.be/pki6ms0_Ods](https://youtu.be/swaYNDMAJmo))
 
 ## FEATURES 
 [Lots of stuff! So please watch the Video!](https://youtu.be/swaYNDMAJmo)
