@@ -1,11 +1,11 @@
-# QBUS x OSM | CAR RENTALS | Time Based Car Renting System for QBUS Servers
-CAR RENTAL system for QBUS Servers, Easy Functionality, and Highly Customizable. Inspired from GrandRP and Core-Sharing. Watch the preview for more info.
+# QBCore | CAR RENTALS | Time Based Car Renting System for QBUS Servers
+CAR RENTAL system for QBUS Servers, Easy Functionality, and Highly Customizable. 
 
-### [DISCORD](https://discord.gg/osmfx)
+
 ### [PREVIEW](https://youtu.be/pki6ms0_Ods)
 
 ## FEATURES 
-[Lots of stuff! So please watch the Video!](https://youtu.be/pki6ms0_Ods)
+[Lots of stuff! So please watch the Video!](https://youtu.be/swaYNDMAJmo)
 
 ## SETUP
 - **Run the SQL file included with the REPOSITORY**
