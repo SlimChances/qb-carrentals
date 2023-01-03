@@ -63,7 +63,10 @@ AddEventHandler('qb-carrentals:client:Confirmed', function(num, plate, closeveh)
 			SetEntityAsMissionEntity(veh, true, true)
 			rentcar1 = veh
 			renting = true
-		end, CRConfig.RentingPositions[num].coords, false)
+			local model = CRConfig.RentingPositions[ClosestRentalVeh].buying
+			local plateText = plate
+			  TriggerServerEvent("qb-rental:giverentalpaperServer", model, plateText)
+		end, CRConfig.RentingPositions[num].coords, true)
 	-- end
 end)
 
@@ -201,7 +204,6 @@ Citizen.CreateThread(function()
 						if IsControlJustPressed(0, 38) then
 							DisableControlAction(0, 38, true)
 							TriggerServerEvent('qb-carrentals:server:start', ClosestRentalVeh, closeveh, rate)
-							TriggerServerEvent('qb-rental:rentalpapers', plate)
 							npbool = true
 							TriggerEvent('StartTick')
 							EnableControlAction(0, 38, true)
@@ -244,8 +246,8 @@ Citizen.CreateThread(function()
 				if currentcar ~= nil then 
 					if currentcar == rentcar1 then 
 						local carcoords = GetEntityCoords(currentcar)
-						Draw3DText(carcoords.x, carcoords.y, carcoords.z - 0.8, '[E] - Return Rented Vehicle', 4, 0.08, 0.08, CRConfig.SecondaryColor)
-						if IsControlJustPressed(0, 38) then
+						Draw3DText(carcoords.x, carcoords.y, carcoords.z - 0.8, '[U] - Return Rented Vehicle', 4, 0.08, 0.08, CRConfig.SecondaryColor)
+						if IsControlJustPressed(0, 303) then
 							print(currentcar)
 							TriggerServerEvent('qb-carrentals:server:EndRental', currentcar)
 							TriggerEvent('qb-carrentals:client:EndRental', currentcar)
