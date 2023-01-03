@@ -14,10 +14,12 @@ for i = 65,  90 do table.insert(Charset, string.char(i)) end
 for i = 97, 122 do table.insert(Charset, string.char(i)) end
 
 RegisterServerEvent('qb-rental:rentalpapers')
-AddEventHandler('qb-rental:rentalpapers', function(plate)
+AddEventHandler('qb-rental:rentalpapers', function(plateText)
     local src = source
     local Player = QBCore.Functions.GetPlayer(src)
-    local info = {}
+    local info = {
+        label = plateText
+    }
     info.citizenid = Player.PlayerData.citizenid
     info.firstname = Player.PlayerData.charinfo.firstname
     info.lastname = Player.PlayerData.charinfo.lastname
@@ -27,7 +29,15 @@ AddEventHandler('qb-rental:rentalpapers', function(plate)
     Player.Functions.AddItem('rentalpapers', 1, false, info)
 
 end)
-
+RegisterServerEvent('qb-rental:giverentalpaperServer', function(model, plateText)
+    local src = source
+    local PlayerData = QBCore.Functions.GetPlayer(src)
+    local info = {
+        label = plateText
+    }
+    PlayerData.Functions.AddItem('rentalpapers', 1, false, info)
+    TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items['rentalpapers'], "add")
+end)
 RegisterServerEvent('qb-rental:removepapers')
 AddEventHandler('qb-rental:removepapers', function(plate, model, money)
     local src = source
